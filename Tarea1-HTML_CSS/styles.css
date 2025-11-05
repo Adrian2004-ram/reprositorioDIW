@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    background-color: aliceblue;
+}
+
+header {
+    position: relative;
+    float: left;
+    background-color: blue;
+    width: 100%;
+}
+
+.logo {
+    max-width: 150;
+    position: relative;
+    float: left;
+}
+
+.fa {
+    position: relative;
+    float: right;
+}
+
+nav {
+    display: none;
+}
+
+.fa:HOVER nav {
+    background-color: red;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 100%;
+}
