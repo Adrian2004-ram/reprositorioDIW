@@ -76,5 +76,20 @@ main {
         }
 }
 
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    @include dispositivo($tablet) {
+        flex-basis: $anchoTarjetaTablet;
+    }
+    @include dispositivo($escritorio) {
+        flex-basis: $anchoTarjetaDesk;
+    }
+}
 
-
+button {
+    @include boton();
+}

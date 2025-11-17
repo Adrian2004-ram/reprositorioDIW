@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FINORA — Metas</title>
+  <style>
+    :root {
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#7c5cff;
+      --muted:#94a3b8;
+      font-family: Inter, ui-sans-serif, system-ui;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:#e6eef8}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:#0b1220;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3ea8ff);display:flex;align-items:center;justify-content:center}
+    .brand h1{margin:0;font-size:18px}
+    nav{display:flex;gap:18px}
+    nav a{text-decoration:none;color:var(--muted);font-size:14px}
+    nav a.active{color:#fff;border-bottom:2px solid var(--accent);padding-bottom:2px}
+
+    main{padding:28px;display:flex;flex-direction:column;gap:24px}
+
+    .header-meta{display:flex;justify-content:space-between;align-items:center}
+    .header-meta h2{margin:0;font-size:20px}
+    .btn-add{padding:10px 16px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--accent),#4cc6ff);color:#071022;font-weight:600;cursor:pointer}
+
+    .goals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+
+    .goal-card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 4px 18px rgba(0,0,0,0.4);display:flex;flex-direction:column;justify-content:space-between}
+    .goal-card h3{margin:0 0 6px;font-size:16px}
+    .goal-card p{margin:0 0 10px;color:var(--muted);font-size:13px}
+
+    .progress-bar{height:10px;background:#1e293b;border-radius:6px;overflow:hidden;margin-top:6px;margin-bottom:10px}
+    .progress{height:100%;background:linear-gradient(90deg,var(--accent),#4cc6ff)}
+
+    .goal-info{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+    footer{padding:16px 28px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid rgba(255,255,255,0.04);background:#0b1220}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4h9v2H7v4h7v2H7v8H5V4z" fill="white"/></svg>
+      </div>
+      <h1>FINORA</h1>
+    </div>
+    <nav>
+      <a href="#">Transacciones</a>
+      <a href="#" class="active">Metas</a>
+      <a href="#">Resumen</a>
+      <a href="#">Ajustes</a>
+      <a href="#"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zM4 20c0-2.21 3.58-4 8-4s8 1.79 8 4v1H4v-1z"/></svg></a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="header-meta">
+      <h2>Tus metas financieras</h2>
+      <button class="btn-add">+ Nueva meta</button>
+    </div>
+
+    <div class="goals-grid">
+      <div class="goal-card">
+        <div>
+          <h3>Viaje a Japón</h3>
+          <p>Meta: €3.000</p>
+          <div class="progress-bar"><div class="progress" style="width:32%"></div></div>
+          <div class="goal-info"><span>Ahorrado: €960</span><span>Restan: €2.040</span></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div>
+          <h3>Fondo de emergencia</h3>
+          <p>Meta: €5.000</p>
+          <div class="progress-bar"><div class="progress" style="width:60%"></div></div>
+          <div class="goal-info"><span>Ahorrado: €3.000</span><span>Restan: €2.000</span></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div>
+          <h3>Nuevo portátil</h3>
+          <p>Meta: €1.200</p>
+          <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+          <div class="goal-info"><span>Ahorrado: €900</span><span>Restan: €300</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    FINORA — © 2025 · Página de metas
+  </footer>
+</body>
+</html>

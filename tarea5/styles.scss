@@ -1,0 +1,61 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    @include flexBetween();
+    
+}
+
+.fondo-contenedor-buscador {
+
+    background-image: url('../../img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 300px; // prueba con cualquier valor  
+    
+    .cont-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+.fondo-contenedor-info {
+
+    background: linear-gradient(to right, #49245a, #c0364f);
+
+    div:first-child {
+        @include flexGrowHijo();
+    }
+
+    .info {
+
+        flex-grow: 1;
+
+        @include flexBetween();
+
+        .flexP {
+
+            @include flexColum();
+
+        }
+
+    }
+
+}

@@ -1,0 +1,110 @@
+<!-- Página de Resumen - FINORA -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resumen - FINORA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #0e0e12;
+      color: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1b1b24;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    header h1 {
+      font-size: 1.4rem;
+      color: #82e0aa;
+      margin: 0;
+    }
+    .summary-container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .summary-card {
+      background-color: #1e1e28;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+    }
+    .summary-card h2 {
+      margin-bottom: 1rem;
+      color: #82e0aa;
+      font-size: 1.2rem;
+    }
+    .amount {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f4f4f4;
+    }
+    .chart-placeholder {
+      background-color: #12121a;
+      height: 180px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #1b1b24;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Resumen Financiero</h1>
+    <nav>
+      <a href="transactions.html">Transacciones</a>
+      <a href="goals.html">Metas</a>
+      <a href="settings.html">Ajustes</a>
+    </nav>
+  </header>
+
+  <main class="summary-container">
+    <section class="summary-card">
+      <h2>Ingresos del Mes</h2>
+      <p class="amount">+2.350 €</p>
+      <div class="chart-placeholder">[Gráfico de ingresos]</div>
+    </section>
+
+    <section class="summary-card">
+      <h2>Gastos del Mes</h2>
+      <p class="amount">-1.720 €</p>
+      <div class="chart-placeholder">[Gráfico de gastos]</div>
+    </section>
+
+    <section class="summary-card">
+      <h2>Ahorro Total</h2>
+      <p class="amount">630 €</p>
+      <div class="chart-placeholder">[Evolución del ahorro]</div>
+    </section>
+
+    <section class="summary-card">
+      <h2>Progreso de Metas</h2>
+      <p class="amount">75%</p>
+      <div class="chart-placeholder">[Progreso global de metas]</div>
+    </section>
+  </main>
+
+  <footer>
+    FINORA © 2025 — Tu bienestar financiero, simplificado.
+  </footer>
+</body>
+</html>

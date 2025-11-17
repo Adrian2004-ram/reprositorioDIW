@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FINORA - Transacciones</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+  <style>
+    /* ===== COLORES ===== */
+    :root {
+      --azul-primario: #1E88E5;
+      --azul-oscuro: #1565C0;
+      --fondo-claro: #F7F9FB;
+      --texto-oscuro: #212121;
+      --texto-secundario: #757575;
+      --blanco: #FFFFFF;
+    }
+
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--fondo-claro);
+      color: var(--texto-oscuro);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background-color: var(--azul-primario);
+      color: var(--blanco);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--blanco);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.85;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 1.5rem;
+    }
+
+    .icons i {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .icons i:hover {
+      color: #BBDEFB;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--texto-oscuro);
+    }
+
+    .transactions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--blanco);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul-primario);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--texto-secundario);
+      font-size: 0.9rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--azul-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="logo">FINORA</div>
+
+    <div class="nav-links">
+      <a href="#">Inicio</a>
+      <a href="#">Transacciones</a>
+      <a href="#">Metas</a>
+      <a href="#">Comunidad</a>
+    </div>
+
+    <div class="icons">
+      <i class="ri-user-3-line" title="Perfil"></i>
+      <i class="ri-settings-3-line" title="Ajustes"></i>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <h2 class="section-title">Últimas transacciones</h2>
+
+    <div class="transactions">
+      <div class="card">
+        <h3>Compra supermercado</h3>
+        <p>Mercadona · 45,20 €</p>
+        <p>📅 3 nov 2025</p>
+      </div>
+      <div class="card">
+        <h3>Ingreso nómina</h3>
+        <p>Trabajo · +1.200 €</p>
+        <p>📅 1 nov 2025</p>
+      </div>
+      <div class="card">
+        <h3>Suscripción Netflix</h3>
+        <p>Ocio · -12,99 €</p>
+        <p>📅 2 nov 2025</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 FINORA · Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
