@@ -21,14 +21,31 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
-.fondo-contenedor-buscador {
-  background-image: url("../../img/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+nav .carrito {
+  position: relative;
 }
-.fondo-contenedor-buscador .cont-column {
+nav .carrito .oculto {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #EEE;
+  width: 400px;
+  padding: 1rem;
+}
+nav .carrito .oculto .infoProducto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+nav .carrito .oculto .infoProducto .ocultoInfo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.3333333333%;
+          flex: 0 0 33.3333333333%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,15 +53,62 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+nav .carrito .oculto .infoProducto .ocultoInfo h5 {
+  font-weight: bold;
+}
+nav .carrito .oculto .infoProducto .ocultoInfo img {
+  max-width: 100%;
+}
+nav .carrito .oculto button {
+  background-color: rgb(135, 21, 206);
+  color: #DDD;
+  padding: 5px;
+}
+nav .carrito .oculto button:hover {
+  background-color: rgb(104, 14, 92);
+}
+
+.carrito:hover .oculto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fondo-contenedor-buscador {
+  background-image: url("../../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.fondo-contenedor-buscador .cont-column {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .fondo-contenedor-buscador .cont-column h1 {
   color: #EEE;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 .fondo-contenedor-buscador .cont-column p {
   color: #EEE;
+  margin-bottom: 8px;
+  padding: 0 1rem;
 }
 .fondo-contenedor-buscador .cont-column form {
   display: -webkit-box;
@@ -54,19 +118,26 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 100%;
+  padding: 0 1rem;
+}
+@media only screen and (min-width: 480px) {
+  .fondo-contenedor-buscador .cont-column form {
+    width: 25%;
+  }
 }
 .fondo-contenedor-buscador .cont-column form input {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  padding: 5px 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% - 80px);
+          flex: 0 0 calc(100% - 80px);
+  padding: 10px;
   background-color: #EEE;
 }
 .fondo-contenedor-buscador .cont-column form button {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  padding: 5px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 5px 10px;
   background-color: #EEE;
 }
 
@@ -74,7 +145,18 @@ nav {
   background: -webkit-gradient(linear, left top, right top, from(#49245a), to(#c0364f));
   background: linear-gradient(to right, #49245a, #c0364f);
 }
-.fondo-contenedor-info .info {
+@media only screen and (min-width: 480px) {
+  .fondo-contenedor-info .info-padre {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.fondo-contenedor-info .info-padre .info {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -87,13 +169,13 @@ nav {
           flex-direction: row;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
 }
-.fondo-contenedor-info .info img {
+.fondo-contenedor-info .info-padre .info img {
   width: 30px;
   margin: 10px;
 }
-.fondo-contenedor-info .info .flexP {
+.fondo-contenedor-info .info-padre .info .flexP {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,6 +195,7 @@ nav {
 
 h2 {
   text-align: center;
+  margin: 1rem 0;
 }
 
 .cursosPadre {
@@ -130,11 +213,18 @@ h2 {
           justify-content: space-between;
 }
 .cursosPadre .curso {
-  border: 1px solid #CCC;
-  margin-bottom: 1rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
+  border: 1px solid #CCC;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media only screen and (min-width: 280px) {
   .cursosPadre .curso {
@@ -161,6 +251,9 @@ h2 {
   width: 100%;
 }
 .cursosPadre .curso .curso-detalle {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,19 +261,10 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
-}
-.cursosPadre .curso .curso-detalle h4 {
-  margin-bottom: 10px;
-}
-.cursosPadre .curso .curso-detalle p {
-  margin-bottom: 10px;
-}
-.cursosPadre .curso .curso-detalle .estrellas {
-  margin-bottom: 10px;
 }
 .cursosPadre .curso .curso-detalle i {
   color: rgb(219, 230, 69);
@@ -196,5 +280,65 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.cursosPadre .curso .curso-detalle .descuento {
+  text-decoration: line-through;
+  font-weight: bold;
+  color: #121212;
+}
+.cursosPadre .curso .curso-detalle button {
+  background-color: rgb(80, 138, 224);
+  color: #DDD;
+  padding: 5px;
+}
+.cursosPadre .curso .curso-detalle button:hover {
+  background-color: rgb(34, 61, 101);
+}
+
+footer {
+  background-color: hsl(0, 0%, 7%);
+}
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #EEE;
+}
+@media only screen and (min-width: 480px) {
+  footer div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+footer div .listFooter {
+  padding: 10px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+@media only screen and (min-width: 480px) {
+  footer div .listFooter {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+footer div .listFooter .tituloLista {
+  font-size: 20px;
+  text-decoration: underline;
   margin-bottom: 10px;
+}
+footer div .listFooter li {
+  list-style: none;
+  text-align: left;
 }

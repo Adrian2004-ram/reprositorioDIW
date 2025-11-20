@@ -11,7 +11,26 @@
     <header>
         <nav class="contenedor">
             <img src="img/logo.jpg">
-            <img src="img/cart.png">
+            <div class="carrito">
+                <img src="img/cart.png">
+                <div class="oculto">
+                    <div class="infoProducto">
+                        <div class="ocultoInfo">
+                            <h5>Imagen</h5>
+                            <img src="./img/curso1.jpg">
+                        </div>
+                        <div class="ocultoInfo">
+                            <h5>Nombre</h5>
+                            <p>CSS Grid y Flexbox Construye + 10 Proyectos</p>
+                        </div>
+                        <div class="ocultoInfo">
+                            <h5>Precio</h5>
+                            <p>$15</p>
+                        </div>
+                    </div>
+                    <button>Ver Carrito</button>
+                </div>
+            </div>  
         </nav>
         <section class="fondo-contenedor-buscador">
             <div class="contenedor cont-column">
@@ -24,7 +43,7 @@
             </div>
         </section>
         <section class="fondo-contenedor-info">
-            <div class="contenedor">
+            <div class="contenedor info-padre">
                 <div class="info">
                     <img src="img/icono1.png">
                     <div class="flexP">
@@ -284,20 +303,20 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer >
         <div class="contenedor">
-            <div class="listFooter">
-                <p>Para tu Negocio</p>
-                <p>Conviertete en Instructor</p>
-                <p>Aplicaciones Móviles</p>
-                <p>Soporte</p>
-                <p>Temas</p>
-            </div>
-            <div class="listFooter">
-                <p>¿Quienes Somos?</p>
-                <p>Empleo</p>
-                <p>Blog</p>
-            </div>
+            <ul class="listFooter">
+            <li class="tituloLista">Para tu Negocio</li>
+            <li>Conviertete en Instructor</li>
+            <li>Aplicaciones Móviles</li>
+            <li>Soporte</li>
+            <li>Temas</li>
+            </ul>
+            <ul class="listFooter">
+            <li class="tituloLista">¿Quienes Somos?</li>
+            <li>Empleo</li>
+            <li>Blog</li>
+            </ul>
         </div>
     </footer>
 </body>

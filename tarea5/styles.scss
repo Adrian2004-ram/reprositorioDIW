@@ -16,6 +16,51 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    .carrito {
+        position: relative;
+
+        .oculto {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #EEE;
+            width: 400px;
+            padding: 1rem;
+
+            .infoProducto {
+                display: flex;
+                flex-direction: row;
+
+                .ocultoInfo {
+                    flex: 0 0 calc(100%/3);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    
+                    h5 {
+                        font-weight: bold;
+                    }
+
+                    img {
+                        max-width: 100%;    
+                    }
+                }
+            }
+
+            button {
+                @include boton($color-boton-especial, $color-boton-hover-especial);
+            }
+        }
+    }
+}
+
+.carrito:hover .oculto{
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .fondo-contenedor-buscador {
@@ -24,39 +69,45 @@ nav {
     background-size: cover;
     background-position: center;
     height: 400px;
-    
-    .cont-column {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    display: flex;
+    align-items: center;
 
+    .cont-column {
+
+        flex-grow: 1;
+   
         h1 {
             color: #EEE;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
         }
 
         p {
             color: #EEE;
+            margin-bottom: 8px;
+            padding: 0 1rem;
         }
 
         form {
-
             display: flex;
             flex-direction: row;
-            
+            width: 100%;
+            padding: 0 1rem;
+
+            @include dispositivo($witdh-tablet) {
+                width: 25%;
+            }
 
             input {
-                flex: 1 0 auto;
-                padding: 5px 0;
+                flex: 0 0 calc(100% - 80px);
+                padding: 10px;
                 background-color: #EEE;
             }
 
             button {
-                
-                flex: 1 0 auto;
-                padding: 5px;
+                flex: 0 0 auto;
+                padding: 5px 10px;
                 background-color: #EEE;
-
-
             }
         }
     }
@@ -65,34 +116,43 @@ nav {
 .fondo-contenedor-info {
 
     background: linear-gradient(to right, #49245a, #c0364f);
+    
+    .info-padre {
 
-    .info {
-
-        flex-grow: 1;
-
-        display: flex;
-        flex-direction: row;
-        justify-content:end;
-
-        img {
-            width: 30px;
-            margin: 10px;
+        @include dispositivo($witdh-tablet) {
+            display: flex;
+            flex-direction: row;
         }
 
-        .flexP {
-            display: flex;
+        .info {
+
             flex-grow: 1;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            color: #EEE;
-           
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            img {
+                width: 30px;
+                margin: 10px;
+            }
+
+            .flexP {
+                display: flex;
+                flex-grow: 1;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                color: #EEE;
+            
+            }
+
         }
     }
 }
 
 h2 {
     text-align: center;
+    margin: 1rem 0;
 }
 
 .cursosPadre {
@@ -105,11 +165,11 @@ h2 {
 
     .curso {
 
-        border: 1px solid #CCC;
-
-        margin-bottom: 1rem;
-
         flex: 1 0 $anchoTargetaPequena;
+        border: 1px solid #CCC;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
         
         @include dispositivo($witdh-movil) {
             flex: 0 0 $anchoTargetaMovil;
@@ -128,23 +188,11 @@ h2 {
         }
 
         .curso-detalle {
-
+            flex: 1 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content:space-between;
             padding: 10px;
-
-            h4 {
-                margin-bottom: 10px;
-            }
-
-            p {
-                margin-bottom: 10px;
-            }
-
-            .estrellas {
-                margin-bottom: 10px;
-            }
+            justify-content: space-between;
 
             i {
                 color: rgb(219, 230, 69);
@@ -154,11 +202,60 @@ h2 {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin-bottom: 10px;
             }
-            
+
+            .descuento {
+                text-decoration: line-through;
+                font-weight: bold;
+                color: #121212;
+            }
+
+                        
+            button {
+
+                @include boton();
+
+            }
+
         }
         
+    }
+}
+
+footer {
+
+    background-color: hsl(0, 0%, 7%);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        color: #EEE;
+
+        @include dispositivo($witdh-tablet) {
+            flex-direction: row;
+            justify-content: start;
+        }
+
+        .listFooter {
+            padding: 10px;
+            align-self: center;
+
+            @include dispositivo($witdh-tablet) {
+                flex: 1 0 auto;
+                align-self: flex-start;
+            }
+
+            .tituloLista {
+                font-size: 20px;
+                text-decoration: underline;
+                margin-bottom: 10px;
+            }
+
+            li {
+                list-style: none;
+                text-align: left;
+            }
+        }
     }
 
 }

@@ -1,5 +1,4 @@
 
-
 @mixin dispositivo($tamaño) {
 
     @media only screen and (min-width: $tamaño) {
@@ -7,3 +6,11 @@
     }
 }
 
+@mixin boton($colorFondo:$color-boton, $colorFondoHover:$color-boton-hover, $colorLetra:#DDD, $pad: 5px) {
+    background-color: $colorFondo;
+    color: $colorLetra;
+    padding: $pad;
+    &:hover {
+        background-color: $colorFondoHover;
+    }
+}
