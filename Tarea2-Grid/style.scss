@@ -9,10 +9,36 @@
 
 .contenedor {
     max-width: 1100px;
+    margin: 0 auto;
 }
+
 
 header {
 
-    
+    .logo {
+        max-width: 100%;
+    }
 
+    nav {
+        background-color: black;
+        padding: 5px 0;
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            place-items: center;
+            li {
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    color: #EFEFEF;
+                    text-align: center;
+                }
+
+            }
+        }
+    }
+
+    .pizzaImge {
+        max-width: 100%;
+    }
 }
